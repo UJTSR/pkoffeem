@@ -20,6 +20,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+        environment: [testpy312, testpy314, test]
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -28,4 +29,4 @@ jobs:
         with:
             pixi-version: v0.62.2 # good to pin this since pixi is not 1.0 yet!
       - name: run the tests
-        run: pixi run -e testpy314 test
+        run: pixi run -e ${{ matrix.environment }} test
