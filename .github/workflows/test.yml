@@ -1,12 +1,27 @@
 name: Test Workflow
 on: [push, pull_request]
 jobs:
-  unit-tests:
+  code-checsk:
     runs-on: ubuntu-latest
     steps:
+      - name: Check code style
+        uses: actions/checkout@v6
+        
+      - name: Install pixi
+        uses: prefix-dev/setup-pixi@v0.9.3
+        with:
+            pixi-version: v0.62.2 # good to pin this since pixi is not 1.0 yet!
+      - name: look for syntax errors
+        run: pixi run ruff check
+  unit-tests:
+    runs-on: ubuntu-latest
+    needs: code-checsk
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
       - name: Install pixi
         uses: prefix-dev/setup-pixi@v0.9.3
         with:
             pixi-version: v0.62.2 # good to pin this since pixi is not 1.0 yet!
       - name: run the tests
-        run: pixi run test
+        run: pixi run pytest
