@@ -84,3 +84,7 @@ prod314 = { features = ["py314"], solve-group = "prod314" }
 prod312 = { features = ["py312"], solve-group = "prod312" }
 # test env
 test = {features = ["test"], solve-group = "default"}
+# test with py312
+testpy312 = {features = ["test"], solve-group = "prod312" }
+# test with py314
+testpy314 = {features = ["test"], solve-group = "prod314" }
