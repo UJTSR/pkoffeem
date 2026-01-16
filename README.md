@@ -6,7 +6,7 @@ Project inspired by _Le Café - Oldelaf_ for the S3 School 2026.
 
 [![Le Café - Oldelaf - on YouTube](http://img.youtube.com/vi/UGtKGX8B9hU/0.jpg)](http://www.youtube.com/watch?v=UGtKGX8B9hU "Le Café - Oldelaf")
 
-
+https://github.com/UJTRS/pkoffeem/actions/workflows/test/badge.svg
 ## Features
 
 - **Data Analysis**: Load and analyze coffee consumption vs productivity datasets
