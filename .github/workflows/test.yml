@@ -30,3 +30,8 @@ jobs:
             pixi-version: v0.62.2 # good to pin this since pixi is not 1.0 yet!
       - name: run the tests
         run: pixi run -e ${{ matrix.environment }} test
+      - name: Upload coverage to Codecov
+        if: matrix.os == 'ubuntu-latest' && matrix.environment == 'testpy312'
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage.xml

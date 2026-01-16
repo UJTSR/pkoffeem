@@ -62,9 +62,10 @@ python=">=3.14,<3.15"
 
 [feature.test.dependencies]
 pytest = "9.*"
+pytest-cov = "*"
 
 [feature.test.tasks]
-test = "pytest"
+test = "pytest --cov=pkoffee --cov-report=xml"
 
 
 [feature.dev.dependencies]
